@@ -1,0 +1,11 @@
+/home/jtsang/iot/receiverApp/bin/Debug/netcoreapp2.2/receiverApp.deps.json
+/home/jtsang/iot/receiverApp/bin/Debug/netcoreapp2.2/receiverApp.runtimeconfig.json
+/home/jtsang/iot/receiverApp/bin/Debug/netcoreapp2.2/receiverApp.runtimeconfig.dev.json
+/home/jtsang/iot/receiverApp/bin/Debug/netcoreapp2.2/receiverApp.dll
+/home/jtsang/iot/receiverApp/bin/Debug/netcoreapp2.2/receiverApp.pdb
+/home/jtsang/iot/receiverApp/obj/Debug/netcoreapp2.2/receiverApp.csprojAssemblyReference.cache
+/home/jtsang/iot/receiverApp/obj/Debug/netcoreapp2.2/receiverApp.csproj.CoreCompileInputs.cache
+/home/jtsang/iot/receiverApp/obj/Debug/netcoreapp2.2/receiverApp.AssemblyInfoInputs.cache
+/home/jtsang/iot/receiverApp/obj/Debug/netcoreapp2.2/receiverApp.AssemblyInfo.cs
+/home/jtsang/iot/receiverApp/obj/Debug/netcoreapp2.2/receiverApp.dll
+/home/jtsang/iot/receiverApp/obj/Debug/netcoreapp2.2/receiverApp.pdb
