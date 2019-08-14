@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "CassandraCSharpDriver": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
             "Microsoft.Azure.EventHubs": {
               "target": "Package",
               "version": "[4.0.0, )"
