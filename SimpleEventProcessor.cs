@@ -13,9 +13,9 @@ namespace receiverApp
     public class SimpleEventProcessor : IEventProcessor
     {
 	// Cassandra Cluster Configs
-	private const string UserName = "";
-	private const string Password = "";
-	private const string CassandraContactPoint = ""; //DNSName
+	// private const string UserName = "";
+	// private const string Password = "";
+	private const string CassandraContactPoint = "cassandra.default.svc.cluster.local"; //DNSName
 	private static int CassandraPort = 9042;
     
         public Task CloseAsync(PartitionContext context, CloseReason reason)
@@ -42,11 +42,11 @@ namespace receiverApp
             {
                 var data = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
                 // todo:: make the save to database work.
-		Cluster cluster = Cluster.Builder().WithCredentials(UserName, Password).WithPort(CassandraPort).AddContactPoint(CassandraContactPoint).Build();
+		// Cluster cluster = Cluster.Builder().WithCredentials(UserName, Password).WithPort(CassandraPort).AddContactPoint(CassandraContactPoint).Build();
+		Cluster cluster = Cluster.Builder().WithPort(CassandraPort).AddContactPoint(CassandraContactPoint).Build();
 		ISession session = cluster.Connect();
 
-		session.Execute("DROP KEYSPACE IF EXISTS uprofile");
-		session.Execute("CREATE KEYSPACE uprofile WITH REPLICATION = { 'class': 'NetworkTopologyStrategy', 'datacenter1': 1};");
+		session.Execute("CREATE KEYSPACE IF NOT EXISTS uprofile WITH REPLICATION = { 'class': 'NetworkTopologyStrategy', 'datacenter1': 1};");
 		session.Execute("CREATE TABLE IF NOT EXISTS uprofile.user (user_id int PRIMARY KEY, user_name text, user_bcity text)");
                 session = cluster.Connect("uprofile");
 		IMapper mapper = new Mapper(session);
